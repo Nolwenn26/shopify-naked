@@ -1,7 +1,11 @@
 {
   "current": {
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
     "customer_layout": "theme",
-    "example_option": "option"
+    "example_option": "option",
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Naked": {
