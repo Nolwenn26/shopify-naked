@@ -1,1 +1,159 @@
-/* CSS stykes go in here */
+/* CSS styles go in here */
+/* font-face */
+@font-face  {
+  font-family: 'Open Sans';
+  src: url('OpenSans-Light.woff2') format('woff2'),
+  url('OpenSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('OpenSans-Medium.woff2') format('woff2'),
+  url('OpenSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('OpenSans-Regular.woff2') format('woff2'),
+  url('OpenSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('OpenSans-ExtraBold.woff2') format('woff2'),
+  url('OpenSans-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #2C2C2C;
+  background-color:#f2f3f5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-bottom:40px;
+}
+
+.dt-c-navTop {
+  display:flex;
+  gap:10px;
+  justify-content: flex-end;
+}
+
+a {
+  text-decoration:underline;
+  color: #2C2C2C;
+  &:hover {
+    color: #aaa;
+  }
+}
+.dt-c-BlockHeader {
+  display:flex;
+  gap:30px;
+}
+
+.dt-c-navigation {
+
+  > ul {
+    display: flex;
+    justify-content: center;
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    gap: 10px;
+    li.has-dropdown {
+      ul {
+        display:none;
+      }
+    }
+  }
+}
+
+.search-form {
+  margin:40px 0;
+}
+
+.dt-c-FormFields {
+  margin:40px 0;
+  .dt-c-whiteBlock {
+    background-color:white;
+    padding:20px;
+  }
+  .dt-c-label {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .dt-c-field {
+    position:relative;
+    display: block;
+    border: 1px solid #DADFE1;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    width:100%;
+    max-width:400px;
+  }
+
+  .dt-c-field-input {
+    border:none;
+    outline:none;
+    display:block;
+    width:100%;
+  }
+
+
+  svg {
+    position:absolute;
+    right:20px;
+    top: 50%;
+    transform:translateY(-50%);
+    line-height:0;
+    font-size:0;
+  }
+
+
+  .dt-c-btn {
+    margin: 20px 0;
+    display: inline-block;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 10px 12px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+
+    &:hover {
+      border: 1px solid #2C2C2C;
+      background-color: transparent;
+      color: #2C2C2C;
+    }
+  }
+}
+
+

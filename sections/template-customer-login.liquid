@@ -1,0 +1,88 @@
+<section class="dt-c-FormFields" x-data="{ loginForm: true, pwRecoverForm: false }">
+    {% form 'customer_login' %}
+        {{ form.errors | default_errors }}
+        <div x-show="loginForm" class="dt-c-whiteBlock">
+            <div>
+                <h1>{{ 'customer.log_in' | t }}</h1>
+            </div>
+            <div class="dt-c-LoginCustomer">
+                <label for="email_address" class="dt-c-label">{{ 'customer.login_page.email' | t }}</label>
+                <div class="dt-c-field">
+                <input type="email"
+                       name="customer[email]"
+                       id="email_address"
+                       autocomplete="email"
+                       class="dt-c-field-input"
+                       placeholder="Email address"
+                >
+                </div>
+            </div>
+
+            {% if form.password_needed %}
+                <div class="dt-c-LoginCustomer">
+                    <label for="password" class="dt-c-label">{{ 'customer.login_page.password' | t }}</label>
+                    <div class="dt-c-field">
+                            <input type="password"
+                                   name="customer[password]"
+                                   id="password"
+                                   autocomplete="password"
+                                   class="dt-c-field-input"
+                                   placeholder="Password"
+                            >
+                            {% render 'icon-eye' %}
+                    </div>
+                </div>
+            {% endif %}
+            <div>
+                <a x-on:click="loginForm = false; pwRecoverForm = true" href="#">
+                    {{ 'customer.login_page.forgot_password' | t }}
+                </a>
+            </div>
+            <div>
+                <button type="submit" class="dt-c-btn">
+                    <span>{{ 'customer.log_in' | t }}</span>
+                </button>
+            </div>
+        </div>
+    {% endform %}
+
+    <div x-show="pwRecoverForm" class="dt-c-whiteBlock">
+        <div>
+            <h1>{{ 'customer.recover_password.title' | t }}</h1>
+        </div>
+        <div>
+            {% form 'recover_customer_password' %}
+                {% if form.errors %}
+                    <div role="alert">
+                        <strong>Error!</strong>
+                        <p>{{ form.errors | default_errors }}</p>
+                    </div>
+                {% endif %}
+
+                <div>
+                    <label for="email" class="dt-c-label">{{ 'customer.login_page.email' | t }}</label>
+                    <div class="dt-c-field">
+                    <input type="email"
+                           name="email"
+                           id="email"
+                           autocomplete="email"
+                           placeholder="Email address"
+                           class="dt-c-field-input"
+                    >
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="dt-c-btn">
+                        {{ 'customer.recover_password.title' | t }}
+                    </button>
+                </div>
+
+                <div>
+                    <a x-on:click="loginForm = true; pwRecoverForm = false"
+                       href="#">{{ 'customer.login_page.back_to_login' | t }}</a>
+                </div>
+            {% endform %}
+        </div>
+    </div>
+</section>

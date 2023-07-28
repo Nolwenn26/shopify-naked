@@ -1,0 +1,94 @@
+<section class="dt-c-FormFields" x-data="{ registerForm: true, pwRecoverForm: false }">
+    {% form 'create_customer', return_to: routes.all_products_collection_url %}
+        {{ form.errors | default_errors }}
+        <div x-show="registerForm" class="dt-c-whiteBlock">
+            <div>
+                <h1>{{ 'customer.register.title' | t }}</h1>
+            </div>
+            <div class="dt-c-LoginCustomer">
+                <label for="first_name" class="dt-c-label">{{ 'customer.register.first_name' | t }}</label>
+                <div class="dt-c-field">
+                    <input type="text"
+                           name="customer[first_name]"
+                           id="first_name"
+                           class="dt-c-field-input"
+                           placeholder="Your first name"
+                    >
+                </div>
+            </div>
+            <div class="dt-c-LoginCustomer">
+                <label for="last_name" class="dt-c-label">{{ 'customer.register.last_name' | t }}</label>
+                <div class="dt-c-field">
+                    <input type="text"
+                           name="customer[last_name]"
+                           id="last_name"
+                           class="dt-c-field-input"
+                           placeholder="Your last name"
+                    >
+                </div>
+            </div>
+            <div class="dt-c-LoginCustomer">
+                <label for="birthday" class="dt-c-label">Your birthday</label>
+                <div class="dt-c-field">
+                    <input
+                            type="text"
+                            name="customer[note][Birthday]"
+                            id="birthday"
+                            class="dt-c-field-input"
+                            placeholder="Your birthday"
+                    >
+                </div>
+            </div>
+            <div class="dt-c-LoginCustomer">
+                <label for="email_address" class="dt-c-label">{{ 'customer.login_page.email' | t }}</label>
+                <div class="dt-c-field">
+                    <input type="email"
+                           name="customer[email]"
+                           id="email_address"
+                           autocomplete="email"
+                           class="dt-c-field-input"
+                           placeholder="Email address"
+                    >
+                </div>
+            </div>
+
+
+            <div class="dt-c-LoginCustomer">
+                <label for="password" class="dt-c-label">{{ 'customer.register.password' | t }}</label>
+                <div class="dt-c-field">
+                    <input type="password"
+                           name="customer[password]"
+                           id="password"
+                           autocomplete="password"
+                           class="dt-c-field-input"
+                           placeholder="Password"
+                    >
+                    {% render 'icon-eye' %}
+                </div>
+            </div>
+
+            <div class="dt-c-LoginCustomer">
+                <label for="password" class="dt-c-label">
+                    {{ 'customer.reset_password.password_confirm' | t }}
+                </label>
+                <div class="dt-c-field">
+                    <input
+                            type="password"
+                            name="customer[password_confirmation]"
+                            id="confirm_password"
+                            placeholder="Confirm your password"
+                            class="dt-c-field-input"
+                            autocomplete="new-password">
+                </div>
+            </div>
+
+            <a href="/account/login" class="text-base text-gray-500 hover:text-gray-900">Se connecter</a>
+
+            <div>
+                <button type="submit" class="dt-c-btn">
+                    <span>{{ 'customer.register.submit' | t }}</span>
+                </button>
+            </div>
+        </div>
+    {% endform %}
+</section>
