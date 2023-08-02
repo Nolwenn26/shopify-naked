@@ -1,0 +1,139 @@
+@import './test.scss';
+* {
+  box-sizing: border-box;
+}
+
+.dt-mb-3 {
+  margin-bottom:30px;
+  label {
+    display:block;
+    margin-bottom:10px;
+  }
+}
+
+.dt-product-card {
+  width:100%;
+  padding:30px;
+  &-custom {
+    border:1px solid #aaa;
+    background-color: white;
+    box-shadow:1px 0 0 rgba(0,0,0,.2);
+    overflow:hidden;
+    border-radius:100%;
+    &-flex {
+      display:flex;
+      flex-direction:column;
+      padding:12px;
+    }
+  }
+  &-height {
+    height: 80px;
+    overflow:hidden;
+    img {
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      transition: .8s ease-in-out;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      &:hover {
+        scale:1.2;
+      }
+    }
+  }
+  &-img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transition: .8s ease-in-out;
+    &:hover {
+      scale:1.2;
+    }
+  }
+}
+
+
+
+.dt-template-product {
+  max-width:1220px;
+  width:100%;
+  margin: 0 auto;
+  &-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+    &-medias {
+      &-block {
+        display:block;
+      }
+    }
+  }
+  &-height {
+    height: 100%;
+    overflow:hidden;
+    padding: 20px;
+    img, video {
+      width:100%;
+      height:100%;
+      object-fit: cover;
+    }
+  }
+  &-cust {
+    overflow:hidden;
+    padding:20px;
+    img, video {
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      padding:20px;
+    }
+  }
+  &-information {
+    position:sticky;
+    top:50px;
+    padding: 20px;
+    &-priceOld {
+      font-weight:500;
+      text-decoration: line-through;
+    }
+    &-priceVariant {
+      font-weight:bold;
+      font-size:16px;
+    }
+    &-priceSelected {
+      background-color: red;
+      padding: 5px 10px;
+      border-radius:100%;
+      font-size:14px;
+      color:white;
+      font-weight:500;
+    }
+  }
+}
+
+.dt-c-Btn {
+  display:inline-block;
+  border: 1px solid #aeaeae;
+  padding: 10px 14px;
+  appearance:none;
+  background-color: white;
+  color: #2C2C2C;
+  cursor:pointer;
+  transition: .2s ease-in-out;
+  &:hover {
+    background-color:#2C2C2C;
+    color:white;
+  }
+}
+
+.dt-selectQty {
+  width:100%;
+  border:1px solid #aaa;
+  padding: 12px 15px;
+}

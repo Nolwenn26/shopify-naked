@@ -1,0 +1,47 @@
+<div class="dt-templateListCollection">
+    <h1>{{ section.settings.title }}</h1>
+
+    <div class="max-w-6xl mx-auto my-3 dt-templateListCollection-width">
+        <div class="dt-templateListCollection-list grid grid-cols-1 md:grid-cols-3 gap-3">
+            {% for collection in collections %}
+                {% if collection.all_products_count > 0 %}
+                    <div class="dt-templateListCollection-container">
+                        <div class="border bg-white overflow-hidden dt-templateListCollection-item">
+                            <a href="{{ collection.url }}" class="dt-templateListCollection-link">
+                                <div class="h-80 overflow-hidden dt-templateListCollection-custom">
+                                    {% if collection.featured_image != blank %}
+                                        {% assign collection_image = collection.featured_image %}
+                                    {% else %}
+                                        {% assign collection_image = collection.products.first.image %}
+                                    {% endif %}
+
+                                    <img class="dt-templateListCollection-img w-full h-full object-cover transition duration-1000 ease-in-out transform hover:scale-105" src="{{ collection_image | img_url: 'medium' }}" alt="{{ collection.title | escape }}">
+                                </div>
+                            </a>
+
+                            <div class="dt-templateListCollection-title">
+                                <h2>{{ collection.title }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Template List Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Collections",
+      "label": "Title"
+    }
+  ]
+}
+{% endschema %}

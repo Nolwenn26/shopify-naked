@@ -5,6 +5,9 @@
             <div>
                 <h1>{{ 'customer.log_in' | t }}</h1>
             </div>
+            <div>
+                <p>{{ 'Create account' | customer_register_link }}</p>
+            </div>
             <div class="dt-c-LoginCustomer">
                 <label for="email_address" class="dt-c-label">{{ 'customer.login_page.email' | t }}</label>
                 <div class="dt-c-field">
@@ -79,9 +82,14 @@
                 </div>
 
                 <div>
+                    <p>{{ 'Create account' | customer_register_link }}</p>
+                </div>
+
+                <div>
                     <a x-on:click="loginForm = true; pwRecoverForm = false"
                        href="#">{{ 'customer.login_page.back_to_login' | t }}</a>
                 </div>
+
             {% endform %}
         </div>
     </div>
